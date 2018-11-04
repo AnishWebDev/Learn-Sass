@@ -1,2 +1,2 @@
-# Learn-Sass
-Learn to use sass
+$myBlue: slateblue;
+$myRed: #c53727;
