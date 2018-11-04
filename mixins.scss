@@ -1,0 +1,32 @@
+// Mixins
+
+@mixin nav-grid($nav-cols) {
+    width: (100% / $nav-cols)
+}
+@mixin clearFix {
+    &::after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+}
+@mixin grid($cols, $mrgn){
+    width: ((100% - (($cols - 1) * $mrgn)) / $cols);
+    margin-right: $mrgn;
+    margin-bottom: $mrgn;
+    &:nth-child(#{$cols}n) {
+        margin-right: 0;
+    }
+}
+@mixin mQ($mxWdth...){
+    @if length($mxWdth) == 1 {
+        @media screen and (max-width:nth($mxWdth, 1)) {
+            @content;
+        }
+    }
+    @if length($mxWdth) == 2 {
+        @media (max-width:nth($mxWdth, 1)) and (min-width:nth($mxWdth, 2)) {
+            @content;
+        }
+    }
+}
