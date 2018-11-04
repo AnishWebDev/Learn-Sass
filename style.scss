@@ -1,0 +1,55 @@
+// Sass
+
+@import "reset";
+@import "mixins";
+
+$myBlue: slateblue;
+$myRed: #c53727;
+
+body {
+    margin: 0;
+    padding: 0;
+    color: $myRed;
+    font-family: arial;
+    font-size: 20px;
+}
+a {
+    color: $myRed;
+    &:hover{
+        color: $myBlue;
+    }
+    @include mQ(1600px, 1200px) {
+        font-size: 16px;
+    }
+}
+nav {
+    background: $myBlue;
+    ul {
+        @include clearFix;
+    }
+    li {
+        @include nav-grid(5);
+        text-align: center;
+        @include mQ(767px) {
+            width: 100%;
+        }
+    }
+    a {
+        color: #fff;
+        padding: 20px;
+        &:hover{
+            color: #fff;
+            background-color: lighten($myBlue, 5);
+        }
+    }
+}
+section img {
+    float: left;
+    @include grid(4, 2%);
+    @include mQ(767px) {
+        @include grid(2, 2%);
+    }
+    @include mQ(479px) {
+        @include grid(1, 2%);
+    }
+}
