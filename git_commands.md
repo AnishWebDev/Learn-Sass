@@ -24,3 +24,6 @@ git commit -m "Add variables file" variables.scss
 
 git push -u origin master
 => Adding the new file to github
+
+:wq
+=> If accidently commit without message
